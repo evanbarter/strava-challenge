@@ -22,15 +22,15 @@ export default function IndexPage({ allPostsData, home }) {
       <Head>
       <title>{`${siteTitle}`}</title>
       </Head>
-      <div className="flex flex-col mt-6 space-y-12 px-20">
-          <div className="flex space-x-5">
-              <div className="w-2/3">
-                  <h1 className="text-5xl font-black italic tracking-wide">
+      <div className="flex flex-col mt-6 space-y-12 px-4 sm:px-20">
+          <div className="flex flex-col sm:flex-row sm:space-x-5">
+              <div className="sm:w-2/3">
+                  <h1 className="text-3xl sm:text-5xl font-black italic tracking-wide">
                       {home.title}
                   </h1>
                   <div className="prose" dangerouslySetInnerHTML={{ __html: home.contentHtml }} />
               </div>
-              <div className="w-1/3 bg-purple-600 p-4 rounded-lg shadow-xl mt-6">
+              <div className="sm:w-1/3 bg-purple-600 p-4 rounded-lg shadow-xl mt-6">
                   <h3 className="text-3xl font-black italic tracking-wide mb-2">Updates ⁉️</h3>
                   <ul className="space-y-2">
                   {allPostsData.map(({ id, date, title }) => (

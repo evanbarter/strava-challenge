@@ -50,27 +50,27 @@ export default function Challenge({ afterAction, challenge, canRemove }) {
     const canEdit = canRemove && !challenge.new_best
 
     const remove = canRemove ? (
-        <div className="w-1/12 flex flex-col items-center justify-center">
-            <svg onClick={delChallenge.bind(this, challenge.segment_id)} className="h-6 w-6 rounded-full hover:bg-white hover:text-purple-900 cursor-pointer" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+        <div className="sm:w-1/12 flex flex-col items-center justify-center mt-4 sm:mt-0 pt-4 sm:pt-0 border-t border-purple-400 sm:border-0">
+            <svg onClick={delChallenge.bind(this, challenge.segment_id)} className="h-6 w-6 rounded-full inline hover:bg-white hover:text-purple-900 cursor-pointer" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
         </div>
     ) : ''
 
     const view = challenge.new_best ? (
-        <a href={`https://www.strava.com/activities/${challenge.activity_id}`} target="_blank" className="w-2/12 flex flex-col items-center justify-center hover:text-purple-400 group">
+        <a href={`https://www.strava.com/activities/${challenge.activity_id}`} target="_blank" className="sm:w-2/12 flex flex-col items-center justify-center hover:text-purple-400 group">
             <svg className="h-6 w-6 mb-1" fill="currentColor" viewBox="0 0 24 24"><path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169" /></svg>
             <span className="text-xs text-purple-200 font-medium group-hover:text-purple-400">view on Strava</span>
         </a>
     ) : (
-        <div className="w-2/12 flex flex-col items-center justify-center">
+        <div className="sm:w-2/12 flex flex-col items-center justify-center">
             <span className="text-xl font-bold">Not set yet</span>
             <span className="text-xs text-purple-200 font-medium">view on Strava</span>
         </div>
     )
 
     return (
-        <div className="flex space-x-4">
-            <h3 className={`${canRemove ? "w-3/12" : "w-4/12"} text-3xl font-semibold italic`}>{challenge.segment_name}</h3>
-            <div className="w-2/12 flex flex-col items-center justify-center">
+        <div className="flex flex-col sm:flex-row space-x-4">
+            <h3 className={`${canRemove ? "sm:w-3/12" : "sm:w-4/12"} text-center sm:text-left text-3xl font-semibold italic mb-4 sm:mb-0`}>{challenge.segment_name}</h3>
+            <div className="sm:w-2/12 flex flex-col items-center justify-center">
                 { editing
                     ? (
                         <span>
@@ -93,11 +93,11 @@ export default function Challenge({ afterAction, challenge, canRemove }) {
                 }
                 <span className="text-xs text-purple-200 font-medium">time to beat</span>
             </div>
-            <div className="w-2/12 flex flex-col items-center justify-center">
+            <div className="sm:w-2/12 flex flex-col items-center justify-center">
                 <span className="text-xl font-bold">{ challenge.new_best ? secsToTime(challenge.new_best) : 'Not set yet' }</span>
                 <span className="text-xs text-purple-200 font-medium">new best</span>
             </div>
-            <div className="w-2/12 flex flex-col items-center justify-center">
+            <div className="sm:w-2/12 flex flex-col items-center justify-center">
                 <span className="text-xl font-bold">{ challenge.new_best ? Math.abs(((challenge.new_best-challenge.time_to_beat)/challenge.time_to_beat) * 100).toPrecision(3) : 'Not set yet' }</span>
                 <span className="text-xs text-purple-200 font-medium">% improved</span>
             </div>

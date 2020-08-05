@@ -11,7 +11,7 @@ export default function Nav({ home }) {
         {!home ? (
           <li>
             <Link href="/">
-              <a className="bg-gray-100 hover:bg-white px-4 py-2 text-purple-800 rounded-lg shadow-sm no-underline font-bold">🏠 Home</a>
+              <a className="bg-gray-100 hover:bg-white px-2 sm:px-4 py-2 text-purple-800 rounded-lg shadow-sm no-underline font-bold">🏠 <span className="hidden sm:inline"> Home</span></a>
             </Link>
           </li>
         ) : <li></li> }
@@ -19,7 +19,7 @@ export default function Nav({ home }) {
         {/* {menu.length ? {} : <li></li> } */}
         <ul className="flex justify-between items-center space-x-4">
           {!session && <>
-            <li><span className="italic">You are not signed in</span></li>
+            <li><span className="hidden sm:inline italic">You are not signed in</span></li>
             <li><a
                 href={`/api/auth/signin`}
                 className="bg-purple-600 rounded-lg shadow-base text-purple-100 font-bold px-4 py-2 hover:bg-purple-700 hover:text-white"
@@ -35,7 +35,7 @@ export default function Nav({ home }) {
             <Link href="/u/[name]" as={`/u/${session.user.name}`}>
               <a className="flex">
                 <div className="flex items-center mr-2">
-                  <ProfileImage image={session.user.image} className="h-8 w-8 cursor-pointer" />
+                  <ProfileImage image={session.user.image} className="hidden sm:inline h-8 w-8 cursor-pointer" />
                 </div>
                 <div>
                   <small>Signed in as</small><br/>
