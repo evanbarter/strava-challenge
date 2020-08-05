@@ -9,7 +9,7 @@ export default function Layout({ children, home }) {
             <Head>
             <meta
                 name="description"
-                content="Learn how to build a personal website using Next.js"
+                content="So you don't like the old-time bikes, huh? https://www.youtube.com/watch?v=uImQkrGG2wQ"
             />
             </Head>
             <Nav home={home} />
