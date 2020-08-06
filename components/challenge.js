@@ -51,14 +51,14 @@ export default function Challenge({ afterAction, challenge, canRemove }) {
 
     const remove = canRemove ? (
         <div className="sm:w-1/12 flex flex-col items-center justify-center mt-4 sm:mt-0 pt-4 sm:pt-0 border-t border-gray-400 sm:border-0">
-            <svg onClick={delChallenge.bind(this, challenge.segment_id)} className="h-6 w-6 rounded-full inline hover:bg-white hover:text-purple-900 cursor-pointer" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+            <svg onClick={delChallenge.bind(this, challenge.segment_id)} className="h-6 w-6 rounded-full inline hover:bg-white hover:text-gray-900 cursor-pointer" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
         </div>
     ) : ''
 
     const view = challenge.new_best ? (
-        <a href={`https://www.strava.com/activities/${challenge.activity_id}`} target="_blank" className="sm:w-2/12 flex flex-col items-center justify-center hover:text-purple-400 group">
+        <a href={`https://www.strava.com/activities/${challenge.activity_id}`} target="_blank" className="sm:w-2/12 p-2 flex flex-col items-center justify-center rounded-lg cursor-pointer bg-white text-orange-500 hover:text-white hover:bg-orange-500 group">
             <svg className="h-6 w-6 mb-1" fill="currentColor" viewBox="0 0 24 24"><path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169" /></svg>
-            <span className="text-xs text-purple-200 font-medium group-hover:text-purple-400">view on Strava</span>
+            <span className="text-sm text-orange-500 group-hover:text-white font-bold">View on Strava</span>
         </a>
     ) : (
         <div className="sm:w-2/12 flex flex-col items-center justify-center">
@@ -74,9 +74,9 @@ export default function Challenge({ afterAction, challenge, canRemove }) {
                 { editing
                     ? (
                         <span>
-                        <input value={customTTB.h} onChange={(event) => { setTTB({ ...customTTB, h: event.target.value }) }} className="rounded text-center inline w-5 h-6 text-purple-800 text-sm" type="text" /> h&nbsp;
-                        <input value={customTTB.m} onChange={(event) => { setTTB({ ...customTTB, m: event.target.value }) }} className="rounded text-center inline w-5 h-6 text-purple-800 text-sm" type="text" /> m&nbsp;
-                        <input value={customTTB.s} onChange={(event) => { setTTB({ ...customTTB, s: event.target.value }) }} className="rounded text-center inline w-5 h-6 text-purple-800 text-sm" type="text" /> s&nbsp;
+                        <input value={customTTB.h} onChange={(event) => { setTTB({ ...customTTB, h: event.target.value }) }} className="rounded text-center inline w-5 h-6 text-gray-800 text-sm" type="text" /> h&nbsp;
+                        <input value={customTTB.m} onChange={(event) => { setTTB({ ...customTTB, m: event.target.value }) }} className="rounded text-center inline w-5 h-6 text-gray-800 text-sm" type="text" /> m&nbsp;
+                        <input value={customTTB.s} onChange={(event) => { setTTB({ ...customTTB, s: event.target.value }) }} className="rounded text-center inline w-5 h-6 text-gray-800 text-sm" type="text" /> s&nbsp;
                         <div className="flex items-center justify-center mt-1 space-x-2">
                             <button onClick={updateChallenge.bind(this, challenge.segment_id)} className="h-6 w-6 inline text-lg bg-white text-gray-800 hover:bg-gray-100 hover:text-gray-900 shadow rounded px-2">✔</button>
                             <button onClick={() => { setEditing(false) }} className="h-6 w-6 inline bg-white text-gray-800 hover:bg-gray-100 hover:text-gray-900 shadow rounded px-2">

@@ -20,8 +20,8 @@ export default function Leaderboard({ title, type, segmentId, ...props }) {
     const { data, error } = useSWR(api, fetcher)
 
 
-    if (error) return <div className={`${props.className} rounded-lg bg-purple-800 shadow-xl p-4`}>Error :(</div>
-    if (!data) return <div className={`${props.className} rounded-lg bg-purple-800 shadow-xl p-4`}>Loading...</div>
+    if (error) return <div className={`${props.className} rounded-lg bg-gray-200 shadow-xl p-4`}>Error :(</div>
+    if (!data) return <div className={`${props.className} rounded-lg bg-gray-200 shadow-xl p-4`}>Loading...</div>
 
     title = type === 'segment' && data.length ? title || data[0].segment_name : title
 
