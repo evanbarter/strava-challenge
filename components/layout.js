@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Nav from '../components/nav'
 
-export const siteTitle = 'The ThrillClimb Challenge'
+export const siteTitle = process.env.NEXT_PUBLIC_TITLE
 
 export default function Layout({ children, home }) {
     return (
-        <div className="bg-purple-900 text-white min-h-screen">
+        <div className="bg-gray-300 text-gray-700 min-h-screen">
             <Head>
             <meta
                 name="description"
@@ -13,7 +13,7 @@ export default function Layout({ children, home }) {
             />
             </Head>
             <Nav home={home} />
-            <main className="bg-purple-900 pb-6">{children}</main>
+            <main className="bg-gray-300 pb-6">{children}</main>
         </div>
     )
 }

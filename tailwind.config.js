@@ -5,24 +5,24 @@ module.exports = {
     typography: (theme) => ({
       default: {
         css: {
-          color: theme('colors.white'),
+          color: theme('colors.gray.700'),
           strong: {
-            color: theme('colors.purple.800'),
+            color: theme('colors.orange.600'),
             background: theme('colors.white'),
             padding: '2px'
           },
           code: {
-            color: theme('colors.purple.800'),
+            color: theme('colors.orange.600'),
             background: theme('colors.white'),
           },
           a: {
-            color: theme('colors.purple.500'),
+            color: theme('colors.orange.500'),
             paddingBottom: '1px',
             textDecoration: 'none',
             fontWeight: 'bold',
-            borderBottom: '2px solid ' + theme('colors.purple.500'),
+            borderBottom: '2px solid ' + theme('colors.orange.500'),
             '&:hover': {
-              color: theme('colors.purple.400'),
+              color: theme('colors.orange.400'),
             },
           },
         },
