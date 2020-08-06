@@ -11,7 +11,7 @@ export default function Nav({ home }) {
         {!home ? (
           <li>
             <Link href="/">
-              <a className="bg-gray-100 hover:bg-white px-2 sm:px-4 py-2 text-gray-800 rounded-lg shadow-sm no-underline font-bold">🏠 <span className="hidden sm:inline"> Home</span></a>
+              <a className="hover:bg-gray-100 bg-white px-2 sm:px-4 py-2 text-gray-800 rounded-lg shadow-sm no-underline font-bold">🏠 <span className="hidden sm:inline"> Home</span></a>
             </Link>
           </li>
         ) : <li></li> }
@@ -22,7 +22,7 @@ export default function Nav({ home }) {
             <li><span className="hidden sm:inline italic">You are not signed in</span></li>
             <li><a
                 href={`/api/auth/signin`}
-                className="bg-white rounded-lg shadow-base text-gray-700 font-bold px-4 py-2 hover:bg-orange-700 hover:text-white"
+                className="bg-white rounded-lg shadow-base text-gray-700 font-bold px-4 py-2 hover:bg-orange-500 hover:text-white"
                 onClick={(e) => {
                   e.preventDefault()
                   signIn()
@@ -45,7 +45,7 @@ export default function Nav({ home }) {
             </Link>
             <a
                 href={`/api/auth/signout`}
-                className="bg-white rounded-lg shadow-base text-gray-700 font-bold px-4 py-2 hover:bg-orange-600 hover:text-white"
+                className="bg-white rounded-lg shadow-base text-gray-700 font-bold px-4 py-2 hover:bg-orange-500 hover:text-white"
                 onClick={(e) => {
                   e.preventDefault()
                   signOut()

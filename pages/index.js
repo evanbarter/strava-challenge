@@ -30,7 +30,7 @@ export default function IndexPage({ allPostsData, home }) {
                   </h1>
                   <div className="prose" dangerouslySetInnerHTML={{ __html: home.contentHtml }} />
               </div>
-              <div className="sm:w-1/3 bg-gray-400 p-4 rounded-lg shadow-xl mt-6">
+              <div className="sm:w-1/3 bg-gray-100 border border-gray-300 p-4 rounded-lg shadow-lg mt-6">
                   <h3 className="text-3xl font-black italic tracking-wide text-gray-800 border-b-2 border-gray-500 pb-2 mb-4">Updates 🗞</h3>
                   <ul className="space-y-2">
                   {allPostsData.map(({ id, date, title }) => (

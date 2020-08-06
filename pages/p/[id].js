@@ -27,7 +27,7 @@ export default function Post({ postData }) {
             <title>{postData.title}</title>
         </Head>
         <article className="mt-8 px-4">
-            <h1 className="max-w-3xl mx-auto text-3xl sm:text-5xl font-black italic leading-tight tracking-wide">{postData.title}</h1>
+            <h1 className="max-w-3xl mx-auto text-gray-800 text-3xl sm:text-5xl font-black italic leading-tight tracking-wide">{postData.title}</h1>
             <div className="max-w-3xl mx-auto mt-4 text-sm">
                 <Date dateString={postData.date} />
             </div>

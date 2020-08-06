@@ -31,7 +31,7 @@ export default function Leaderboard({ title, type, segmentId, ...props }) {
             <div className="space-y-4">
             { data.length ?
                 data.map(row => (
-                    <div key={`${row.user_id}${row.segment_id}`} className="flex items-center space-x-3 px-4 py-1 text-md hover:bg-gray-300">
+                    <div key={`${row.user_id}${row.segment_id}`} className="flex items-center space-x-3 px-4 py-1 text-md hover:bg-gray-300 hover:shadow-inner">
                         <Link href="/u/[name]" as={`/u/${row.name}`}>
                             <a><ProfileImage image={row.image} className="h-8 w-8 cursor-pointer" /></a>
                         </Link>
