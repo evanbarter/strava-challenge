@@ -51,7 +51,7 @@ function User() {
             </Head>
             <div className="space-y-8 mt-8 mx-4">
                 <section className="mx-auto max-w-6xl bg-gray-200 rounded-lg shadow-md p-6 pt-4">
-                    <h2 className="mb-4 pb-2 text-4xl font-black italic tracking-wide border-b-4 border-gray-500 text-gray-800">Challenges</h2>
+                    <h2 className="mb-4 pb-2 text-4xl font-black italic tracking-wide border-b-4 border-gray-500 text-gray-800">{ session && session.user && session.user.name === name ? 'Challenges' : `${name}'s challenges` }</h2>
                     <div className="px-2 space-y-4">
                     { challenges.length ?
                         challenges.map(challenge => (
