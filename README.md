@@ -49,7 +49,7 @@ yarn dev
 
 ### Register a webhook URL for your app
 
-**Note!** This step needs to be completed with an instance of this app that is publically accessible via the Internet, so that Strava may begin to send activity data via webhooks. It will not work when the app is running in the `localhost:3000` development server.
+**Note!** This step needs to be completed with an instance of this app that is publicly accessible via the Internet, so that Strava may begin to send activity data via webhooks. It will not work when the app is running in the `localhost:3000` development server.
 
 ```bash
 curl -X POST https://www.strava.com/api/v3/push_subscriptions \
